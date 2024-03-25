@@ -1,0 +1,13 @@
+@import './components/font',
+				'./components/contact/index',
+				'./components/chatbox/index';
+
+* {
+	font-family: 'Poppins';
+}
+
+html, 
+body {
+    height: 100%;
+		width: 100%;
+}

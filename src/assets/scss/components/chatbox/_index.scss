@@ -1,0 +1,14 @@
+.chatbox {
+	&--unselected {
+		background-color: #F2FDFD;
+		height: 100vh;
+
+		span {
+			text-align: center;
+		}
+		h1 {
+			font-weight: bolder;
+			font-size: 5em;
+		}
+	}
+}

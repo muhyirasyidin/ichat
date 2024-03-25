@@ -1,24 +1,31 @@
 <template>
-  <div class="card" style="width: 18rem">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+  <!-- Begin::Chat -->
+  <article class="row p-0 m-0">
+    <!-- Begin::Contact List -->
+    <section class="col-12 col-md-4 p-0">
+      <ContactIndex />
+    </section>
+    <!-- End::Contact List -->
+
+    <!-- Begin::Chatbox -->
+    <section class="col p-0 d-none d-sm-block">
+      <ChatboxNotSelected />
+    </section>
+    <!-- Begin::Chatbox -->
+  </article>
+  <!-- End::Chat -->
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+<script lang="ts" setup>
+import { onMounted } from 'vue';
 
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class HomeView extends Vue {}
+/**
+ * @Component
+ */
+import ContactIndex from '@/components/Contact/ContactIndex.vue';
+import ChatboxNotSelected from '@/components/Chatbox/ChatboxNotSelected.vue';
+
+onMounted(() => {
+  console.log('test');
+});
 </script>

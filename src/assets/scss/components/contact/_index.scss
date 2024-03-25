@@ -1,0 +1,159 @@
+.contact {
+	max-height: 100vh;
+
+	&__header {
+		height: 60px;
+		background-color: #e7f6f9;
+
+		img {
+			object-fit: cover;
+			border-radius: 40px;
+			margin-left: 1rem;
+			cursor: pointer;
+		}
+
+		&__action-container {
+			width: 30%;
+			height: 100%;
+			margin-right: 0.5rem;
+		}
+
+		svg {
+			transform: scale(1);
+			color: #54656f;
+			cursor: pointer;
+		}
+	}
+
+	&__filter {
+		height: 50px;
+		padding: 0 0.5rem;
+		padding-top: 0.5rem;
+
+		form {
+			position: relative;
+
+			input {
+				background: #f0f2f5;
+				padding-left: 3rem;
+				border: 0;
+				display: inline-block;
+				width: 90%;
+
+				&::placeholder {
+					font-size: 12px;
+				}
+			}
+
+			svg {
+				cursor: pointer;
+			}
+		}
+
+		&__icon {
+			position: absolute;
+			top: 0.7rem;
+			left: 1rem;
+			color: #54656f;
+		}
+
+		&__filter {	
+			margin-left: 0.5rem;
+			color: #54656f;
+		}
+	}
+
+	&__list {
+		height: calc(100vh - 120px);
+		overflow-y: auto;
+		padding: 0 0.5rem;
+
+		&::-webkit-scrollbar {
+			background-color: #fff;
+			width: 16px;
+		}
+		
+		/* background of the scrollbar except button or resizer */
+		&::-webkit-scrollbar-track {
+				background-color: #fff;
+		}
+		
+		/* scrollbar itself */
+		&::-webkit-scrollbar-thumb {
+				background-color: #babac0;
+				border-radius: 16px;
+				border: 4px solid #fff;
+		}
+		
+		/* set button(top and bottom of the scrollbar) */
+		&::-webkit-scrollbar-button {
+				display:none;
+		}
+
+		&-item {
+			padding: 0.5rem;
+
+			&:hover {
+				background: #f1f1f1;
+				cursor: pointer;
+			}
+
+			&__profile {
+				img {
+					object-fit: cover;
+					border-radius: 32px;
+				}
+			}
+
+			&__info {
+				margin-left: 1rem;
+
+				&-name {
+					font-weight: lighter;
+					font-size: 14px;
+					color: #6b7c85;
+
+					&--unread {
+						@extend .contact__list-item__info-name;
+						font-weight: bold;
+					}
+				}
+
+				&-text {
+					text-overflow: ellipsis;
+					font-weight: lighter;
+					font-size: 12px;
+				}
+			}
+
+			&__notif {
+				p {
+					font-size: 12px;
+				}
+
+				&--time-unread {
+					color: #14a2ba;
+					font-weight: bold;
+				}
+
+				span {
+					background: #14a2ba;
+					float: right;
+				}
+
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+			}
+		}
+
+		&__empty-message {
+			text-align: center;
+			margin-top: 1rem;
+			font-size: 14px;
+			font-weight: bold;
+		}
+	}
+}
