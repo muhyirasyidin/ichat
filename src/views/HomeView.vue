@@ -17,15 +17,9 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue';
-
 /**
  * @Component
  */
 import ContactIndex from '@/components/Contact/ContactIndex.vue';
 import ChatboxNotSelected from '@/components/Chatbox/ChatboxNotSelected.vue';
-
-onMounted(() => {
-  console.log('test');
-});
 </script>

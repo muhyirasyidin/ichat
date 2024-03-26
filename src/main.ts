@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import '@/assets/scss/style.scss';
 
+import 'vue3-carousel/dist/carousel.css';
+
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
