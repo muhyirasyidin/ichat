@@ -10,7 +10,8 @@
 
 		&--inactive {
 			@extend .sidebar__icon;
-			
+			margin: 0 auto;
+			display: block;
 			height: 45px;
 		}
 	}

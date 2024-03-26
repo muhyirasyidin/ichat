@@ -1,10 +1,12 @@
 <template>
   <div class="sidebar">
     <!-- Begin::Icon -->
+    <img v-if="sidebar" src="/icon.png" alt="Icon" class="sidebar__icon" />
     <img
-      src="/icon.png"
+      v-else
+      src="/icon-inactive.png"
       alt="Icon"
-      :class="sidebar ? 'sidebar__icon' : 'sidebar__icon--inactive'"
+      class="sidebar__icon--inactive"
     />
     <!-- End::Icon -->
 
