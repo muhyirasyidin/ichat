@@ -5,23 +5,16 @@
 		height: 60px;
 		background-color: #e7f6f9;
 
-		img {
-			object-fit: cover;
-			border-radius: 40px;
+		svg {
 			margin-left: 1rem;
 			cursor: pointer;
 		}
 
-		&__action-container {
-			width: 30%;
-			height: 100%;
-			margin-right: 0.5rem;
-		}
-
-		svg {
-			transform: scale(1);
-			color: #54656f;
-			cursor: pointer;
+		p {
+			color: #14a2ba;
+			font-weight: bold;
+			font-size: 24px;
+			margin-left: 1rem;
 		}
 	}
 
@@ -53,13 +46,13 @@
 
 		&__icon {
 			position: absolute;
-			top: 0.7rem;
+			top: 0.5rem;
 			left: 1rem;
 			color: #54656f;
 		}
 
 		&__filter {	
-			margin-left: 0.5rem;
+			margin-left: 1rem;
 			color: #54656f;
 		}
 	}
