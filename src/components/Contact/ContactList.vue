@@ -8,7 +8,7 @@
 
       <section v-else v-for="(item, index) in datas" :key="index">
         <!-- Begin::Badge -->
-        <div style="position: relative">
+        <div v-if="item.title" style="position: relative">
           <hr />
 
           <div class="contact__list__container">
@@ -25,7 +25,9 @@
             :key="iContent"
           />
         </template>
+        <!-- End::General -->
 
+        <!-- Begin::CC -->
         <template v-else-if="item.section === 'cc'">
           <ContactCCHandler
             v-for="(content, iContent) in item.contents"
@@ -33,7 +35,17 @@
             :key="iContent"
           />
         </template>
-        <!-- End::General -->
+        <!-- End::CC -->
+
+        <!-- Begin::CC Group -->
+        <template v-else-if="item.section === 'cc group'">
+          <ContactCCGroup
+            v-for="(content, iContent) in item.contents"
+            :item="content"
+            :key="iContent"
+          />
+        </template>
+        <!-- End::CC Group -->
       </section>
     </div>
     <div v-else>
@@ -54,6 +66,7 @@ import { ref, onMounted } from 'vue';
 import SkeletonLoading from '@/components/Contact/SkeletonLoading.vue';
 import ContactGeneral from '@/components/Contact/ContactGeneral.vue';
 import ContactCCHandler from '@/components/Contact/ContactCCHandler.vue';
+import ContactCCGroup from '@/components/Contact/ContactCCGroup.vue';
 
 const isLoading = ref(true);
 
@@ -65,6 +78,19 @@ onMounted(() => {
 });
 
 const datas = ref([
+  {
+    title: '',
+    section: 'cc group',
+    contents: [
+      {
+        name: 'CC Icon Gandul',
+        message: "That's great news!",
+        time: '4:50',
+        notif: '5',
+        unread: true,
+      },
+    ],
+  },
   {
     title: 'CC Icon Plus Gandul',
     section: 'cc',
@@ -78,6 +104,7 @@ const datas = ref([
         unread: false,
         sosmed: 'whatsapp',
         username: '+6285591991872',
+        status: 'new',
       },
     ],
   },
@@ -94,6 +121,7 @@ const datas = ref([
         unread: false,
         sosmed: 'whatsapp',
         username: '+6285591991872',
+        status: 'done',
       },
     ],
   },

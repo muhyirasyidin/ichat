@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-start">
       <!-- Begin::Profile -->
       <div class="contact__list-item__profile">
-        <img :src="item?.img" alt="Profile Chat" width="40" height="40" />
+        <img src="/icrm.png" alt="Profile Chat" width="40" height="40" />
       </div>
       <!-- End::Profile -->
 
@@ -29,32 +29,6 @@
           {{ item?.message }}
         </p>
         <!-- End::Info Message -->
-
-        <!-- Begin::Info Channel -->
-        <p class="contact__list-item__info-sosmed m-0">
-          <font-awesome-icon
-            v-if="item?.sosmed === 'ig'"
-            class="instagram"
-            :icon="['fab', 'instagram']"
-          />
-          <font-awesome-icon
-            v-else-if="item?.sosmed === 'telegram'"
-            class="telegram"
-            :icon="['fab', 'telegram']"
-          />
-          <font-awesome-icon
-            v-else-if="item?.sosmed === 'whatsapp'"
-            class="whatsapp"
-            :icon="['fab', 'whatsapp']"
-          />
-          <font-awesome-icon
-            v-else-if="item?.sosmed === 'email'"
-            class="email"
-            :icon="['fa', 'envelope']"
-          />
-          <span>{{ item?.username }}</span>
-        </p>
-        <!-- End::Info Channel -->
       </div>
       <!-- End::Info -->
     </div>

@@ -8,9 +8,9 @@
         <img
           :src="item?.img"
           alt="Profile Chat"
-          width="32"
-          height="32"
-          class="cc"
+          width="40"
+          height="40"
+          :class="`cc-${item?.status}`"
         />
         <font-awesome-icon :icon="['fas', 'medal']" />
       </div>
