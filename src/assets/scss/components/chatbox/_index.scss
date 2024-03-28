@@ -11,4 +11,212 @@
 			font-size: 5em;
 		}
 	}
+
+	&__header  {
+		background-color: #f5f5f5;
+		height: 60px;
+
+		> div {
+			display: inline-block;
+			gap: 0.5rem;
+
+			p {
+				font-size: 14px;
+			}
+
+			img {
+				margin-left: 1rem;
+				border-radius: 40px;
+			}
+
+			span {
+				font-size: 10px;
+				background-color: #a8f0c3;
+				color: #1eae54;
+			}
+
+			svg {
+				margin-right: 1rem;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__body {
+		height: calc(100vh - 120px);
+		background-color: #fafaf5;
+		padding: 1rem;
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {
+			background-color: #fff;
+			width: 16px;
+		}
+		
+		/* background of the scrollbar except button or resizer */
+		&::-webkit-scrollbar-track {
+				background-color: #fff;
+		}
+		
+		/* scrollbar itself */
+		&::-webkit-scrollbar-thumb {
+				background-color: #babac0;
+				border-radius: 16px;
+				border: 4px solid #fff;
+		}
+		
+		/* set button(top and bottom of the scrollbar) */
+		&::-webkit-scrollbar-button {
+				display:none;
+		}
+
+		img {
+			border-radius: 40px;
+			object-fit: cover;
+		}
+
+		&__container {
+			padding: 0 1rem;
+			width: fit-content;
+			background-color: #fafaf5;
+			margin-top: -2rem;
+			z-index: 10;
+			position: absolute;
+			left: 0; 
+			right: 0; 
+			margin-left: auto; 
+			margin-right: auto; 
+		}
+
+		&__badge {
+			font-size: 10px;
+			background-color: #f5f5f5;
+			display: inline-block;
+			padding: 0.1rem 0.5rem;
+			border-radius: 8px;
+			// text-transform: uppercase;
+		}
+
+		&__unread {
+			font-size: 12px;
+			background-color: #FEFEFD;
+			text-align: center;
+			padding: 0.5rem 0;
+			margin: 1rem 0;
+			color: #77772F;
+		}
+
+		&__client {
+			gap: 1rem;
+			padding: 0 1rem;
+
+			img.cc-new {
+				border: 2px solid red;
+			}
+
+			img.cc-takeover {
+				border: 2px solid #2777cd;
+			}
+			
+			img.cc-done {
+				border: 2px solid #25d366;
+			}
+
+			&__bubble {
+				background-color: #fff;
+				padding: 1rem;
+				min-width: 40%;
+				max-width: 60%;
+				border-radius: 0 12px 12px;
+				font-size: 12px;
+
+				&-name {
+					font-weight: bold;
+					cursor: pointer;
+				}
+
+				&-sosmed {
+					svg {
+						font-size: 12px;
+					}
+	
+					svg.instagram {
+						color: #ed1c8f;
+					}
+	
+					svg.telegram {
+						color: #00b4fd;
+					}
+	
+					svg.whatsapp {
+						color: #4caf50;
+					}
+	
+					svg.email {
+						color: #5f98d1;
+					}
+	
+					span {
+						font-size: 12px;
+						margin-left: 0.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	&__footer {
+		min-height: 60px;
+		max-height: 150px;
+		width: 100%;
+		padding: 1rem;
+		position: relative;
+
+		textarea {
+			border: none;
+			width: 92%;
+  		resize: none; /* Remove the resize handle */
+
+			&:focus {
+				outline: none; /* Removes the focus outline */
+  			border: none; /* Optional: Removes the border if it's set */
+			}
+
+			&::-webkit-scrollbar {
+				background-color: #fff;
+				width: 16px;
+			}
+			
+			/* background of the scrollbar except button or resizer */
+			&::-webkit-scrollbar-track {
+					background-color: #fff;
+			}
+			
+			/* scrollbar itself */
+			&::-webkit-scrollbar-thumb {
+					background-color: #babac0;
+					border-radius: 16px;
+					border: 4px solid #fff;
+			}
+			
+			/* set button(top and bottom of the scrollbar) */
+			&::-webkit-scrollbar-button {
+					display:none;
+			}
+		}
+
+		&__action {
+			gap: 1rem;
+			height: 100%;
+
+			svg {
+				font-size: 20px;
+				cursor: pointer;
+
+				&:last-child {
+					color: #14a2ba
+				}
+			}
+		}
+	}
 }

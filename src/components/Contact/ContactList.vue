@@ -8,13 +8,13 @@
 
       <section v-else v-for="(item, index) in datas" :key="index">
         <!-- Begin::Badge -->
-        <div v-if="item.title" style="position: relative">
+        <!-- <div v-if="item.title" style="position: relative">
           <hr />
 
           <div class="contact__list__container">
             <span class="contact__list__badge">{{ item.title }}</span>
           </div>
-        </div>
+        </div> -->
         <!-- End::Badge -->
 
         <!-- Begin::General -->
@@ -23,6 +23,7 @@
             v-for="(content, iContent) in item.contents"
             :item="content"
             :key="iContent"
+            @selectContact="handleSelectContact"
           />
         </template>
         <!-- End::General -->
@@ -33,6 +34,7 @@
             v-for="(content, iContent) in item.contents"
             :item="content"
             :key="iContent"
+            @selectContact="handleSelectContact"
           />
         </template>
         <!-- End::CC -->
@@ -43,6 +45,7 @@
             v-for="(content, iContent) in item.contents"
             :item="content"
             :key="iContent"
+            @selectContact="handleSelectContact"
           />
         </template>
         <!-- End::CC Group -->
@@ -59,6 +62,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
+import { useStore } from 'vuex';
 
 /**
  * @Component
@@ -67,6 +71,8 @@ import SkeletonLoading from '@/components/Contact/SkeletonLoading.vue';
 import ContactGeneral from '@/components/Contact/ContactGeneral.vue';
 import ContactCCHandler from '@/components/Contact/ContactCCHandler.vue';
 import ContactCCGroup from '@/components/Contact/ContactCCGroup.vue';
+
+const store = useStore();
 
 const isLoading = ref(true);
 
@@ -282,4 +288,8 @@ const datas = ref([
     ],
   },
 ]);
+
+const handleSelectContact = () => {
+  store.commit('message/setOpen', true);
+};
 </script>

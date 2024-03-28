@@ -8,6 +8,7 @@ import createMutationsSharer from 'vuex-shared-mutations';
  */
 import auth from '@/store/modules/Auth';
 import config from '@/store/modules/Config';
+import message from '@/store/modules/Message';
 
 const ls = new SecureLS({ encodingType: 'aes' });
 
@@ -28,6 +29,7 @@ export default createStore({
   modules: {
     auth,
     config,
+    message,
   },
   plugins: [
     vuexLocal.plugin,

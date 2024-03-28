@@ -9,7 +9,8 @@
 
     <!-- Begin::Chatbox -->
     <section class="col p-0 d-none d-sm-block">
-      <ChatboxNotSelected />
+      <ChatboxIndex v-if="open" />
+      <ChatboxNotSelected v-else />
     </section>
     <!-- Begin::Chatbox -->
   </article>
@@ -17,9 +18,17 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+
 /**
  * @Component
  */
 import ContactIndex from '@/components/Contact/ContactIndex.vue';
 import ChatboxNotSelected from '@/components/Chatbox/ChatboxNotSelected.vue';
+import ChatboxIndex from '@/components/Chatbox/ChatboxIndex.vue';
+
+const store = useStore();
+
+const open = computed(() => store.getters['message/getOpen']);
 </script>
