@@ -42,18 +42,16 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { useStore } from 'vuex';
 
-const store = useStore();
 const router = useRouter();
 
 const isLoading = ref(false);
 
 const handleSubmit = () => {
   isLoading.value = true;
-  store.commit('auth/setAuthentication', true);
-  isLoading.value = false;
-
-  router.push({ path: '/' });
+  setTimeout(() => {
+    isLoading.value = false;
+    router.push({ path: '/otp' });
+  }, 2000);
 };
 </script>

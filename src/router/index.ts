@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
     component: pages('LoginView'),
   },
   {
+    path: '/otp',
+    name: 'otp',
+    component: pages('OtpView'),
+  },
+  {
     path: '/',
     name: 'home',
     component: () => pages('HomeView'),
@@ -32,7 +37,8 @@ router.beforeEach((to, from, next) => {
     // make sure the user is authenticated
     !store.getters['auth/getAuthenticated'] &&
     // ❗️ Avoid an infinite redirect
-    to.name !== 'login'
+    to.name !== 'login' &&
+    to.name !== 'otp'
   ) {
     // redirect the user to the login page
     next({

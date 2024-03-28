@@ -4,7 +4,13 @@
     <!-- Begin::Sidebar-->
     <section
       class="p-0"
-      :class="routeName === 'login' ? 'd-none' : sidebar ? 'col-2' : 'col-1'"
+      :class="
+        routeName === 'login' || routeName === 'otp'
+          ? 'd-none'
+          : sidebar
+          ? 'col-2'
+          : 'col-1'
+      "
     >
       <SidebarMenu />
     </section>
