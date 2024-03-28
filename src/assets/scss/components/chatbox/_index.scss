@@ -1,6 +1,6 @@
 .chatbox {
 	&--unselected {
-		background-color: #F2FDFD;
+		background-color: #fafaf5;
 		height: 100vh;
 
 		span {
@@ -9,6 +9,11 @@
 		h1 {
 			font-weight: bolder;
 			font-size: 5em;
+		}
+
+		p {
+			font-weight: bold;
+			font-size: 18px;
 		}
 	}
 
