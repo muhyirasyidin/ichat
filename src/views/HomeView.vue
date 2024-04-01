@@ -1,8 +1,8 @@
 <template>
   <!-- Begin::Chat -->
-  <article class="row p-0 m-0">
+  <article class="row p-0 m-0" style="overflow: hidden; height: 100vh">
     <!-- Begin::Contact List -->
-    <section class="col-12 col-md-4 p-0">
+    <section class="col-12 col-md-3 p-0">
       <ContactIndex />
     </section>
     <!-- End::Contact List -->
@@ -13,6 +13,15 @@
       <ChatboxNotSelected v-else />
     </section>
     <!-- Begin::Chatbox -->
+
+    <!-- Begin::Detail -->
+    <section
+      class="p-0"
+      :class="detail ? 'detail-container active' : 'detail-container'"
+    >
+      <DetailIndex />
+    </section>
+    <!-- Begin::Detail -->
   </article>
   <!-- End::Chat -->
 </template>
@@ -22,13 +31,15 @@ import { computed } from 'vue';
 import { useStore } from 'vuex';
 
 /**
- * @Component
+ * @Components
  */
 import ContactIndex from '@/components/Contact/ContactIndex.vue';
 import ChatboxNotSelected from '@/components/Chatbox/ChatboxNotSelected.vue';
 import ChatboxIndex from '@/components/Chatbox/ChatboxIndex.vue';
+import DetailIndex from '@/components/Chatbox/Detail/DetailIndex.vue';
 
 const store = useStore();
 
 const open = computed(() => store.getters['message/getOpen']);
+const detail = computed(() => store.getters['message/getDetail']);
 </script>

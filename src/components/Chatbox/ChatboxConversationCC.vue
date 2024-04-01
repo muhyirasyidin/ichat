@@ -30,13 +30,17 @@
           width="40"
           height="40"
           :class="`cc-${bubble.status}`"
+          @click="handleDetail"
         />
         <!-- End::Profile Client -->
 
         <!-- Begin::Bubble -->
         <div class="chatbox__body__client__bubble">
           <!-- Begin::Bubble Name -->
-          <p class="chatbox__body__client__bubble-name m-0">
+          <p
+            class="chatbox__body__client__bubble-name m-0"
+            @click="handleDetail"
+          >
             {{ bubble.name }}
 
             <span v-if="bubble.status !== 'new'" class="ml-5">
@@ -97,7 +101,12 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, toRefs } from 'vue';
+import { defineProps, toRefs, computed } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+
+const detail = computed(() => store.getters['message/getDetail']);
 
 // Define your props with type annotations
 const props = defineProps({
@@ -106,4 +115,8 @@ const props = defineProps({
 
 // Use toRefs to create a reactive reference for each prop
 const { item } = toRefs(props);
+
+const handleDetail = () => {
+  store.commit('message/setDetail', !detail.value);
+};
 </script>

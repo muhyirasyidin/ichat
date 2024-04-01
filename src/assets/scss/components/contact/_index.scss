@@ -52,7 +52,7 @@
 		}
 
 		&__filter {	
-			margin-left: 1rem;
+			margin-left: 0.5rem;
 			color: #54656f;
 		}
 	}
@@ -121,6 +121,11 @@
 				background: #f1f1f1;
 				cursor: pointer;
 				border-radius: 6px;
+			}
+
+			&.active {
+				background-color: #eaf6fa;
+				border-right: 2px solid #0c8ce9;
 			}
 
 			&__profile {
@@ -207,11 +212,13 @@
 				&--time-unread {
 					color: #14a2ba;
 					font-weight: bold;
+					font-size: 10px;
 				}
 
 				span {
 					background: #14a2ba;
 					float: right;
+					font-size: 10px;
 				}
 
 				&::after {

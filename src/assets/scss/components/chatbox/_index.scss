@@ -96,6 +96,10 @@
 				@extend .chatbox__body__container;
 				position: sticky;
 				top: 0;
+
+				&-hide {
+					top: -100px;
+				}
 			}
 		}
 
@@ -120,6 +124,10 @@
 		&__client {
 			gap: 1rem;
 			padding: 0 1rem;
+			
+			img {
+				cursor: pointer;
+			}
 
 			img.cc-new {
 				border: 2px solid red;
@@ -242,6 +250,269 @@
 
 				&:last-child {
 					color: #14a2ba
+				}
+			}
+		}
+
+		&-cc {
+			height: 60px;
+			background-color: #eaf6fa;
+			padding: 0.5rem 1rem;
+
+			button {
+				font-weight: bold;
+				border: 1px solid #14a2ba;
+				color: #14a2ba;
+				font-size: 14px;
+			}
+		}
+	}
+
+	&__detail {
+		&__header {
+			height: 50px;
+			padding: 2.5rem 0;
+			padding-left: 2rem;
+			gap: 1rem;
+
+			border-bottom: 1px solid #f1f1f1;
+
+			svg {
+				cursor: pointer;
+			}
+
+			p {
+				font-weight: bold;
+				font-size: 14px;
+			}
+		}
+
+		&__info {
+			padding: 2rem;
+
+			p {
+				font-size: 14px;
+				text-align: center;
+			}
+
+			img {
+				border-radius: 50px;
+				display: block;
+				margin: auto;
+			}
+
+			img.cc-new {
+				border: 2px solid red;
+			}
+
+			img.cc-takeover {
+				border: 2px solid #2777cd;
+			}
+			
+			img.cc-done {
+				border: 2px solid #25d366;
+			}
+
+			button {
+				background-color: #eaf6fa;
+				color: #14a2ba;
+				font-size: 12px;
+				margin: auto;
+				display: block;
+
+				svg {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+
+		&__details {
+			&__tab {
+				cursor: pointer;
+
+				&__item {
+					pad
+					&:hover {
+						background-color: #eaf6fa;
+					}
+
+					&.active {
+						font-weight: bold;
+						border-bottom: 2px solid #14a2ba;
+					}
+				}
+			}
+
+			&__content {
+				color: #62696a;
+				height: calc(100vh - 330px);
+				overflow-y: auto;
+
+				&::-webkit-scrollbar {
+					background-color: #fff;
+					width: 16px;
+				}
+				
+				/* background of the scrollbar except button or resizer */
+				&::-webkit-scrollbar-track {
+						background-color: #fff;
+				}
+				
+				/* scrollbar itself */
+				&::-webkit-scrollbar-thumb {
+						background-color: #babac0;
+						border-radius: 16px;
+						border: 4px solid #fff;
+				}
+				
+				/* set button(top and bottom of the scrollbar) */
+				&::-webkit-scrollbar-button {
+						display:none;
+				}
+
+				li {
+					padding: 0.8rem 0;
+					border-bottom: 1px solid #f1f1f1;
+					font-size: 14px;
+
+					svg {
+						margin-right: 0.5rem;
+					}
+				}
+
+				&__history {
+					height: calc(100vh - 330px);
+					overflow-y: auto;
+					&::-webkit-scrollbar {
+						background-color: #fff;
+						width: 16px;
+					}
+					
+					/* background of the scrollbar except button or resizer */
+					&::-webkit-scrollbar-track {
+							background-color: #fff;
+					}
+					
+					/* scrollbar itself */
+					&::-webkit-scrollbar-thumb {
+							background-color: #babac0;
+							border-radius: 16px;
+							border: 4px solid #fff;
+					}
+					
+					/* set button(top and bottom of the scrollbar) */
+					&::-webkit-scrollbar-button {
+							display:none;
+					}
+
+					&__container {
+						padding: 0 1rem;
+						width: fit-content;
+						background-color: #fff;
+						margin-top: -2rem;
+						z-index: 10;
+						position: absolute;
+						left: 0; 
+						right: 0; 
+						margin-left: auto; 
+						margin-right: auto; 
+					}
+			
+					&__badge {
+						margin-top: -1rem;
+						font-size: 10px;
+						background-color: #f5f5f5;
+						display: inline-block;
+						padding: 0.1rem 0.5rem;
+						border-radius: 8px;
+						// text-transform: uppercase;
+					}
+
+					&-item {
+						padding: 0.5rem;
+						border-bottom: 1px solid #f1f1f1;
+						width: 100%;
+			
+						&:hover {
+							background: #f1f1f1;
+							cursor: pointer;
+							border-radius: 6px;
+						}
+			
+						&__profile {
+							img {
+								object-fit: cover;
+								border-radius: 40px;
+							}
+			
+							img.cc-new {
+								border: 2px solid red;
+							}
+			
+							img.cc-takeover {
+								border: 2px solid #2777cd;
+							}
+							
+							img.cc-done {
+								border: 2px solid #25d366;
+							}
+			
+							svg {
+								position: absolute;
+								right: 0;
+								top: 1.3rem;
+								color: #ffcb3c;
+							}
+						}
+			
+						&__info {
+							margin-left: 1rem;
+							width: 300px;
+			
+							&-name {
+								font-weight: lighter;
+								font-size: 14px;
+								color: #6b7c85;
+							}
+
+							&-time {
+								font-size: 12px;
+							}
+			
+							&-text {
+								text-overflow: ellipsis;
+								font-weight: lighter;
+								font-size: 12px;
+							}
+			
+							&-sosmed {
+								svg {
+									font-size: 12px;
+								}
+			
+								svg.instagram {
+									color: #ed1c8f;
+								}
+			
+								svg.telegram {
+									color: #00b4fd;
+								}
+			
+								svg.whatsapp {
+									color: #4caf50;
+								}
+			
+								svg.email {
+									color: #5f98d1;
+								}
+			
+								span {
+									font-size: 12px;
+									margin-left: 0.5rem;
+								}
+							}
+						}
+					}
 				}
 			}
 		}

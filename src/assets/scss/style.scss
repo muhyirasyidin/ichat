@@ -6,11 +6,30 @@
 				'./components/sidebar/index';
 
 * {
-	font-family: 'Poppins';
+	font-family: 'Inter';
 }
 
 html, 
 body {
     height: 100%;
 		width: 100%;
+}
+
+.detail-container {
+	width: 0px;
+	transition: width 0.5s;
+	overflow: hidden;
+
+	&.active {
+		width: 330px;
+	}
+}
+
+.sidebar-container {
+	width: 240px;
+	transition: width 0.5s;
+
+	&.inactive {
+		width: 80px;
+	}
 }

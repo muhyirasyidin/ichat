@@ -1,6 +1,6 @@
 <template>
   <div
-    class="contact__list-item d-flex align-items-center justify-content-between"
+    class="contact__list-item active d-flex align-items-center justify-content-between"
     @click="$emit('selectContact', item)"
   >
     <div class="d-flex justify-content-start">

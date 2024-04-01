@@ -8,8 +8,8 @@
         routeName === 'login' || routeName === 'otp'
           ? 'd-none'
           : sidebar
-          ? 'col-2'
-          : 'col-1'
+          ? 'sidebar-container'
+          : 'sidebar-container inactive'
       "
     >
       <SidebarMenu />

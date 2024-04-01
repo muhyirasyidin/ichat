@@ -2,17 +2,17 @@
   <div class="sidebar__menu">
     <!-- Begin::Menu Item -->
     <div
-      class="d-flex align-items-center"
+      class="d-flex align-items-center sidebar__menu--item"
       v-for="(menu, index) in menus"
       :key="index"
       :class="
         sidebar
           ? menu.active
-            ? 'sidebar__menu--item-active'
-            : 'sidebar__menu--item'
+            ? 'active'
+            : ''
           : menu.active
-          ? 'sidebar__menu--item-active sidebar__menu--item--inactive'
-          : 'sidebar__menu--item sidebar__menu--item--inactive'
+          ? 'active sidebar__menu--item--inactive'
+          : 'sidebar__menu--item--inactive'
       "
     >
       <!-- Begin::Icon -->
