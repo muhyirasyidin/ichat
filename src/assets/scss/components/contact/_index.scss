@@ -3,7 +3,7 @@
 
 	&__header {
 		height: 60px;
-		background-color: #e7f6f9;
+		background-color: #fff;
 
 		svg {
 			margin-left: 1rem;
@@ -19,7 +19,7 @@
 	}
 
 	&__filter {
-		height: 50px;
+		height: 70px;
 		padding: 0 0.5rem;
 		padding-top: 0.5rem;
 
@@ -31,7 +31,7 @@
 				padding-left: 3rem;
 				border: 0;
 				display: inline-block;
-				width: 90%;
+				// width: 90%;
 				font-size: 12px;
 
 				&::placeholder {
@@ -39,8 +39,10 @@
 				}
 			}
 
-			svg {
+			p, svg {
 				cursor: pointer;
+				text-align: right;
+				font-size: 12px;
 			}
 		}
 
@@ -58,7 +60,7 @@
 	}
 
 	&__list {
-		height: calc(100vh - 120px);
+		height: calc(100vh - 140px);
 		overflow-y: auto;
 		padding: 0 0.5rem;
 

@@ -1,27 +1,40 @@
 <template>
   <div class="chatbox__body">
     <!-- Begin::CC Group -->
-    <ChatboxConversationCC
-      v-for="(item, index) in datas"
-      :key="index"
-      :item="item"
-    />
+    <div v-if="!pickedUp">
+      <ChatboxConversationCC
+        v-for="(item, index) in datas"
+        :key="index"
+        :item="item"
+      />
+    </div>
     <!-- End::CC Group -->
 
     <!-- Begin::Individu -->
-    <!-- <ChatboxConversationIndividual /> -->
+    <div v-else>
+      <ChatboxConversationIndividual
+        v-for="(item, index) in datasIndividual"
+        :key="index"
+        :item="item"
+      />
+    </div>
     <!-- End::Individu -->
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
 
 /**
  * @Components
  */
 import ChatboxConversationCC from '@/components/Chatbox/ChatboxConversationCC.vue';
-// import ChatboxConversationIndividual from '@/components/Chatbox/ChatboxConversationIndividual.vue';
+import ChatboxConversationIndividual from '@/components/Chatbox/ChatboxConversationIndividual.vue';
+
+const store = useStore();
+
+const pickedUp = computed(() => store.getters['message/getPickedUp']);
 
 const datas = ref([
   {
@@ -94,6 +107,87 @@ const datas = ref([
         time: '10:30',
         total: '(1000 Messages)',
         handler: 'Chandra Hasibuan',
+      },
+    ],
+  },
+]);
+
+const datasIndividual = ref([
+  {
+    tanggal: '13/03/2024',
+    bubbles: [
+      {
+        client: true,
+        name: 'Abdul Madjid',
+        content:
+          'Hiking sounds amazing!, I might catch up on some reading and also meet up, with a few friends on Sunday',
+        sosmed: 'whatsapp',
+        unread: false,
+        username: '+6285591991872',
+        status: 'done',
+        time: '10:30',
+        total: '(3 Messages)',
+        handler: 'Indra Kesuma',
+      },
+      {
+        client: true,
+        name: 'Abdul Madjid',
+        content:
+          'Hiking sounds amazing!, I might catch up on some reading and also meet up, with a few friends on Sunday',
+        sosmed: 'whatsapp',
+        unread: false,
+        username: '+6285591991872',
+        status: 'done',
+        time: '10:30',
+        total: '(3 Messages)',
+        handler: 'Indra Kesuma',
+      },
+      {
+        client: true,
+        name: 'Abdul Madjid',
+        content:
+          'Hiking sounds amazing!, I might catch up on some reading and also meet up, with a few friends on Sunday',
+        sosmed: 'whatsapp',
+        unread: false,
+        username: '+6285591991872',
+        status: 'done',
+        time: '10:30',
+        total: '(3 Messages)',
+        handler: 'Indra Kesuma',
+      },
+      {
+        client: false,
+        content:
+          'Hiking sounds amazing!, I might catch up on some reading and also meet up, with a few friends on Sunday',
+        username: '+6285591991872',
+        time: '10:30',
+        handler: 'Juliana',
+      },
+    ],
+  },
+  {
+    tanggal: 'Today',
+    bubbles: [
+      {
+        client: true,
+        name: 'Grace Miller',
+        content:
+          'Hiking sounds amazing!, I might catch up on some reading and also meet up, with a few friends on Sunday',
+        unread: false,
+        sosmed: 'whatsapp',
+        username: '+6285591991872',
+        status: 'done',
+        time: '10:30',
+        total: '(1000 Messages)',
+        handler: 'Chandra Hasibuan',
+      },
+      {
+        client: false,
+        content:
+          'Hiking sounds amazing!, I might catch up on some reading and also meet up, with a few friends on Sunday',
+        username: '+6285591991872',
+        time: '10:30',
+        handler: 'Juliana',
       },
     ],
   },

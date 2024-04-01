@@ -8,6 +8,7 @@ export default {
   state: {
     open: false,
     detail: false,
+    pickedUp: false,
   },
   mutations: {
     setOpen(state: Message, value: boolean) {
@@ -15,6 +16,9 @@ export default {
     },
     setDetail(state: Message, value: boolean) {
       state.detail = value;
+    },
+    setPickedUp(state: Message, value: boolean) {
+      state.pickedUp = value;
     },
   },
   actions: {},
@@ -24,6 +28,9 @@ export default {
     },
     getDetail(state: Message) {
       return state.detail;
+    },
+    getPickedUp(state: Message) {
+      return state.pickedUp;
     },
   },
 };

@@ -2,7 +2,7 @@
   <!-- Begin::Chat -->
   <article class="row p-0 m-0" style="overflow: hidden; height: 100vh">
     <!-- Begin::Contact List -->
-    <section class="col-12 col-md-3 p-0">
+    <section class="col-12 p-0 col-md-3">
       <ContactIndex />
     </section>
     <!-- End::Contact List -->
