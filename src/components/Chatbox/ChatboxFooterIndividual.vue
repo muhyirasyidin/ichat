@@ -6,6 +6,7 @@
         placeholder="Type message..."
         ref="textarea"
         rows="1"
+        @input="handleTyping"
       ></textarea>
       <!-- Begin::Text -->
 
@@ -19,4 +20,13 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+/**
+ * @WS
+ */
+import { socket } from '@/config/ws';
+
+const handleTyping = (e: any) => {
+  socket.emit('typing', e.target.value);
+};
+</script>
